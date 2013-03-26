@@ -17,6 +17,11 @@ module CropCalculator
 
     height = width / target_ratio
      
+    if (height < roi_height)
+      height = roi_height
+      width = height * target_ratio
+    end
+    
     if height > img_height
       height = img_height
       width = height * target_ratio
